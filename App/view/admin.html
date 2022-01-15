@@ -1,0 +1,22 @@
+<h1>Gerenciador de conteudo</h1>
+<a href="http://localhost/MVC_projetos/?pagina=admin&metodo=create">Criar publicação</a>
+<br>
+<br>
+<hr>
+<br>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Titulo</th>
+        <th>Alteração</th>
+        <th>Deleção</th>
+    </tr>
+    {% for postagem in postagens %}
+    <tr>
+        <td>{{postagem.id}}</td>
+        <td>{{postagem.titulo}}</td>
+        <td><a href="http://localhost/MVC_projetos/?pagina=admin&metodo=change&id={{postagem.id}}">Alteração</a></td>
+        <td><a href="http://localhost/MVC_projetos/?pagina=admin&metodo=delete&id={{postagem.id}}">Deleção</a></td>
+    </tr>
+    {% endfor %}
+</table>
